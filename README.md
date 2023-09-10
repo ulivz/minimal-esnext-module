@@ -1,20 +1,45 @@
-<h1 align="center">ts-lib-template</h1>
+<h1 align="center">minimal-esnext-module</h1>
 
 <p align="center">
-    A hassle-free TS library template.
+    A minimal esnext module used to test bundler behaviors.
 </p>
 
 <p align="center">
-    <a href="https://npmjs.com/package/ts-lib-template"><img src="https://img.shields.io/npm/v/ts-lib-template.svg?style=flat" alt="NPM version"></a> 
-    <a href="https://npmjs.com/package/ts-lib-template"><img src="https://img.shields.io/npm/dm/ts-lib-template.svg?style=flat" alt="NPM downloads"></a> 
-    <a href="https://circleci.com/gh/saojs/ts-lib-template"><img src="https://img.shields.io/circleci/project/saojs/ts-lib-template/master.svg?style=flat" alt="Build Status"></a> 
+    <a href="https://npmjs.com/package/minimal-esnext-module"><img src="https://img.shields.io/npm/v/minimal-esnext-module.svg?style=flat" alt="NPM version"></a> 
+    <a href="https://npmjs.com/package/minimal-esnext-module"><img src="https://img.shields.io/npm/dm/minimal-esnext-module.svg?style=flat" alt="NPM downloads"></a> 
+    <a href="https://circleci.com/gh/saojs/minimal-esnext-module"><img src="https://img.shields.io/circleci/project/saojs/minimal-esnext-module/master.svg?style=flat" alt="Build Status"></a> 
 </p>
+
+## Motivation
+
+Some meta frameworks doesn't transpile `node_modules` by default, and it's very common to troubleshot issues caused by esnext syntax located at  `node_modules`. This module created some minimal functions for you to test bundler behaviors.
+
 
 ## Quick Start
 
-1. Click "Use this template" at this repository.
-2. Rename all `ts-lib-template` to your package name.
-3. Commands:
+```bash
+npm i minimal-esnext-module
+```
+
+## API
+
+### `async`
+
+```ts
+import { asyncFunc } from 'minimal-esnext-module';
+
+asyncFunc();
+```
+
+### `Top-level await`
+
+```ts
+import { TOP_LEVEL_AWAIT } from 'minimal-esnext-module/top-level-await';
+
+console.log(TOP_LEVEL_AWAIT);
+```
+
+## Contribution Guide
 
 ```bash
 npm run bootstrap   # install dependencies
@@ -27,15 +52,6 @@ npm run test        # run all tests
 npm run cov         # run all tests and generate coverage report
 npm run release     # release this package
 ```
-
-## Features
-
-- TypeScript by default.
-- Output both `cjs` and `esm`.
-- Unit test with [jest](https://facebook.github.io/jest/).
-- Format code with [eslint](https://eslint.org/docs).
-- Fix and format code on each commit.
-- Leverage [quick-publish](https://github.com/ulivz/quick-publish) for release flow.
 
 ## License
 

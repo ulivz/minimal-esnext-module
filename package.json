@@ -1,10 +1,14 @@
 {
-  "name": "ts-lib-template",
-  "description": "Default Template",
+  "name": "minimal-esnext-module",
+  "description": "A minimal esnext module used to test bundler behaviors",
   "version": "0.0.1",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "typings": "esm/index.d.ts",
+  "exports": {
+    ".": "./esm/index.js",
+    "./top-level-await": "./esm/top-level-await.js"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"
@@ -16,12 +20,8 @@
   "scripts": {
     "bootstrap": "pnpm i --prefer-offline",
     "clean": "rm -rf cjs esm",
-    "dev": "run-p dev:cjs dev:esm",
-    "build": "run-p build:cjs build:esm",
-    "dev:cjs": "npm run build:cjs -- --watch",
-    "dev:esm": "npm run build:esm -- --watch",
-    "build:cjs": "tsc -p tsconfig.json --module commonjs --outDir lib",
-    "build:esm": "tsc -p tsconfig.json --module ES2015 --outDir esm",
+    "build": "tsc",
+    "dev": "npm run build -- --watch",
     "prepublishOnly": "npm run build",
     "lint": "eslint -c .eslintrc.js src --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
