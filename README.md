@@ -14,7 +14,6 @@
 
 Some meta frameworks doesn't transpile `node_modules` by default, and it's very common to troubleshot issues caused by esnext syntax located at  `node_modules`. This module created some minimal functions for you to test bundler behaviors.
 
-
 ## Quick Start
 
 ```bash

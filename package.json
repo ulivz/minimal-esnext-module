@@ -1,7 +1,7 @@
 {
   "name": "minimal-esnext-module",
   "description": "A minimal esnext module used to test bundler behaviors",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "typings": "esm/index.d.ts",
